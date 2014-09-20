@@ -27,9 +27,15 @@ extension SKNode {
 
 class GameViewController: UIViewController {
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        /* Try to connect with socket IO */
+        let socket = SocketIO()
+        socket.connectToHost("192.168.0.226", onPort: 6969)
+        
+        
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             let skView = self.view as SKView

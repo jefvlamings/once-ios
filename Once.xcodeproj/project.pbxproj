@@ -15,6 +15,22 @@
 		61684A2719CCB145009846F1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61684A2619CCB145009846F1 /* Images.xcassets */; };
 		61684A2A19CCB145009846F1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61684A2819CCB145009846F1 /* LaunchScreen.xib */; };
 		61684A3619CCB145009846F1 /* OnceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61684A3519CCB145009846F1 /* OnceTests.swift */; };
+		616CAC9C19CCB9C4009202E6 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9B19CCB9C4009202E6 /* libicucore.dylib */; };
+		616CAC9E19CCB9CB009202E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9D19CCB9CB009202E6 /* CFNetwork.framework */; };
+		616CACA019CCB9D5009202E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9F19CCB9D5009202E6 /* Security.framework */; };
+		616CACA219CCB9DE009202E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CACA119CCB9DE009202E6 /* Foundation.framework */; };
+		616CAD0B19CD6FA7009202E6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 616CACE819CD6FA7009202E6 /* .gitignore */; };
+		616CAD0C19CD6FA7009202E6 /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = 616CACE919CD6FA7009202E6 /* .gitmodules */; };
+		616CAD0D19CD6FA7009202E6 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 616CACEA19CD6FA7009202E6 /* CHANGELOG.md */; };
+		616CAD0E19CD6FA7009202E6 /* CONTRIBUTORS.md in Sources */ = {isa = PBXBuildFile; fileRef = 616CACEB19CD6FA7009202E6 /* CONTRIBUTORS.md */; };
+		616CAD0F19CD6FA7009202E6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 616CACEC19CD6FA7009202E6 /* LICENSE */; };
+		616CAD1019CD6FA7009202E6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 616CACED19CD6FA7009202E6 /* README.md */; };
+		616CAD1119CD6FA7009202E6 /* SocketIO.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CACEF19CD6FA7009202E6 /* SocketIO.m */; };
+		616CAD1219CD6FA7009202E6 /* SocketIOJSONSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CACF119CD6FA7009202E6 /* SocketIOJSONSerialization.m */; };
+		616CAD1319CD6FA7009202E6 /* SocketIOPacket.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CACF319CD6FA7009202E6 /* SocketIOPacket.m */; };
+		616CAD1419CD6FA7009202E6 /* SocketIOTransportWebsocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CACF619CD6FA7009202E6 /* SocketIOTransportWebsocket.m */; };
+		616CAD1519CD6FA7009202E6 /* SocketIOTransportXHR.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CACF819CD6FA7009202E6 /* SocketIOTransportXHR.m */; };
+		616CAD2419CD6FD6009202E6 /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 616CAD2319CD6FD6009202E6 /* SRWebSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6129393519CD7C4A00121E97 /* Once-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Once-Bridging-Header.h"; sourceTree = "<group>"; };
 		61684A1619CCB145009846F1 /* Once.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Once.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61684A1A19CCB145009846F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61684A1B19CCB145009846F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +57,30 @@
 		61684A2F19CCB145009846F1 /* OnceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		61684A3419CCB145009846F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61684A3519CCB145009846F1 /* OnceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnceTests.swift; sourceTree = "<group>"; };
+		616CAC9B19CCB9C4009202E6 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		616CAC9D19CCB9CB009202E6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		616CAC9F19CCB9D5009202E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		616CACA119CCB9DE009202E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		616CACE819CD6FA7009202E6 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		616CACE919CD6FA7009202E6 /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
+		616CACEA19CD6FA7009202E6 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		616CACEB19CD6FA7009202E6 /* CONTRIBUTORS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTORS.md; sourceTree = "<group>"; };
+		616CACEC19CD6FA7009202E6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		616CACED19CD6FA7009202E6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		616CACEE19CD6FA7009202E6 /* SocketIO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIO.h; sourceTree = "<group>"; };
+		616CACEF19CD6FA7009202E6 /* SocketIO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIO.m; sourceTree = "<group>"; };
+		616CACF019CD6FA7009202E6 /* SocketIOJSONSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOJSONSerialization.h; sourceTree = "<group>"; };
+		616CACF119CD6FA7009202E6 /* SocketIOJSONSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOJSONSerialization.m; sourceTree = "<group>"; };
+		616CACF219CD6FA7009202E6 /* SocketIOPacket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOPacket.h; sourceTree = "<group>"; };
+		616CACF319CD6FA7009202E6 /* SocketIOPacket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOPacket.m; sourceTree = "<group>"; };
+		616CACF419CD6FA7009202E6 /* SocketIOTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransport.h; sourceTree = "<group>"; };
+		616CACF519CD6FA7009202E6 /* SocketIOTransportWebsocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportWebsocket.h; sourceTree = "<group>"; };
+		616CACF619CD6FA7009202E6 /* SocketIOTransportWebsocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportWebsocket.m; sourceTree = "<group>"; };
+		616CACF719CD6FA7009202E6 /* SocketIOTransportXHR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketIOTransportXHR.h; sourceTree = "<group>"; };
+		616CACF819CD6FA7009202E6 /* SocketIOTransportXHR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketIOTransportXHR.m; sourceTree = "<group>"; };
+		616CAD2119CD6FD6009202E6 /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		616CAD2219CD6FD6009202E6 /* SRWebSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRWebSocket.h; sourceTree = "<group>"; };
+		616CAD2319CD6FD6009202E6 /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRWebSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +88,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616CAC9C19CCB9C4009202E6 /* libicucore.dylib in Frameworks */,
+				616CACA219CCB9DE009202E6 /* Foundation.framework in Frameworks */,
+				616CACA019CCB9D5009202E6 /* Security.framework in Frameworks */,
+				616CAC9E19CCB9CB009202E6 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,9 +108,14 @@
 		61684A0D19CCB145009846F1 = {
 			isa = PBXGroup;
 			children = (
+				616CAC9B19CCB9C4009202E6 /* libicucore.dylib */,
+				616CAC9D19CCB9CB009202E6 /* CFNetwork.framework */,
+				616CACA119CCB9DE009202E6 /* Foundation.framework */,
+				616CAC9F19CCB9D5009202E6 /* Security.framework */,
 				61684A1819CCB145009846F1 /* Once */,
 				61684A3219CCB145009846F1 /* OnceTests */,
 				61684A1719CCB145009846F1 /* Products */,
+				616CACE719CD6FA7009202E6 /* socket.IO-objc */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,10 +135,11 @@
 				61684A1D19CCB145009846F1 /* GameScene.sks */,
 				61684A1F19CCB145009846F1 /* GameScene.swift */,
 				61684A2119CCB145009846F1 /* GameViewController.swift */,
-				61684A2319CCB145009846F1 /* Main.storyboard */,
 				61684A2619CCB145009846F1 /* Images.xcassets */,
 				61684A2819CCB145009846F1 /* LaunchScreen.xib */,
+				61684A2319CCB145009846F1 /* Main.storyboard */,
 				61684A1919CCB145009846F1 /* Supporting Files */,
+				6129393519CD7C4A00121E97 /* Once-Bridging-Header.h */,
 			);
 			path = Once;
 			sourceTree = "<group>";
@@ -116,6 +167,41 @@
 				61684A3419CCB145009846F1 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		616CACE719CD6FA7009202E6 /* socket.IO-objc */ = {
+			isa = PBXGroup;
+			children = (
+				616CACE819CD6FA7009202E6 /* .gitignore */,
+				616CACE919CD6FA7009202E6 /* .gitmodules */,
+				616CACEA19CD6FA7009202E6 /* CHANGELOG.md */,
+				616CACEB19CD6FA7009202E6 /* CONTRIBUTORS.md */,
+				616CACEC19CD6FA7009202E6 /* LICENSE */,
+				616CACED19CD6FA7009202E6 /* README.md */,
+				616CACEE19CD6FA7009202E6 /* SocketIO.h */,
+				616CACEF19CD6FA7009202E6 /* SocketIO.m */,
+				616CACF019CD6FA7009202E6 /* SocketIOJSONSerialization.h */,
+				616CACF119CD6FA7009202E6 /* SocketIOJSONSerialization.m */,
+				616CACF219CD6FA7009202E6 /* SocketIOPacket.h */,
+				616CACF319CD6FA7009202E6 /* SocketIOPacket.m */,
+				616CACF419CD6FA7009202E6 /* SocketIOTransport.h */,
+				616CACF519CD6FA7009202E6 /* SocketIOTransportWebsocket.h */,
+				616CACF619CD6FA7009202E6 /* SocketIOTransportWebsocket.m */,
+				616CACF719CD6FA7009202E6 /* SocketIOTransportXHR.h */,
+				616CACF819CD6FA7009202E6 /* SocketIOTransportXHR.m */,
+				616CAD2019CD6FD6009202E6 /* SocketRocket */,
+			);
+			path = "socket.IO-objc";
+			sourceTree = "<group>";
+		};
+		616CAD2019CD6FD6009202E6 /* SocketRocket */ = {
+			isa = PBXGroup;
+			children = (
+				616CAD2119CD6FD6009202E6 /* SocketRocket-Prefix.pch */,
+				616CAD2219CD6FD6009202E6 /* SRWebSocket.h */,
+				616CAD2319CD6FD6009202E6 /* SRWebSocket.m */,
+			);
+			path = SocketRocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,7 +284,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616CAD0C19CD6FA7009202E6 /* .gitmodules in Resources */,
+				616CAD0B19CD6FA7009202E6 /* .gitignore in Resources */,
 				61684A2A19CCB145009846F1 /* LaunchScreen.xib in Resources */,
+				616CAD0F19CD6FA7009202E6 /* LICENSE in Resources */,
 				61684A2719CCB145009846F1 /* Images.xcassets in Resources */,
 				61684A1E19CCB145009846F1 /* GameScene.sks in Resources */,
 				61684A2519CCB145009846F1 /* Main.storyboard in Resources */,
@@ -219,9 +308,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616CAD1519CD6FA7009202E6 /* SocketIOTransportXHR.m in Sources */,
+				616CAD1019CD6FA7009202E6 /* README.md in Sources */,
+				616CAD0E19CD6FA7009202E6 /* CONTRIBUTORS.md in Sources */,
 				61684A2019CCB145009846F1 /* GameScene.swift in Sources */,
 				61684A2219CCB145009846F1 /* GameViewController.swift in Sources */,
+				616CAD1119CD6FA7009202E6 /* SocketIO.m in Sources */,
 				61684A1C19CCB145009846F1 /* AppDelegate.swift in Sources */,
+				616CAD0D19CD6FA7009202E6 /* CHANGELOG.md in Sources */,
+				616CAD1219CD6FA7009202E6 /* SocketIOJSONSerialization.m in Sources */,
+				616CAD2419CD6FD6009202E6 /* SRWebSocket.m in Sources */,
+				616CAD1419CD6FA7009202E6 /* SocketIOTransportWebsocket.m in Sources */,
+				616CAD1319CD6FA7009202E6 /* SocketIOPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +447,7 @@
 				INFOPLIST_FILE = Once/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Once/Once-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -359,6 +458,7 @@
 				INFOPLIST_FILE = Once/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Once/Once-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -415,6 +515,7 @@
 				61684A3B19CCB145009846F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		61684A3C19CCB145009846F1 /* Build configuration list for PBXNativeTarget "OnceTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +524,7 @@
 				61684A3E19CCB145009846F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

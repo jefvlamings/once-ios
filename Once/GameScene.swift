@@ -1,44 +1,49 @@
 //
 //  GameScene.swift
-//  Once
+//  elastix
 //
-//  Created by Jef Vlamings on 19/09/14.
+//  Created by Jef Vlamings on 18/08/14.
 //  Copyright (c) 2014 Jef Vlamings. All rights reserved.
 //
 
 import SpriteKit
 
 class GameScene: SKScene {
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!";
-        myLabel.fontSize = 65;
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame));
+    
+    var sprites : [SKSpriteNode] = []
+    
+    func placeFingerPrints(touches: NSSet) {
+        removeChildrenInArray(sprites)
         
-        self.addChild(myLabel)
+        /* Called when a touch moves */
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self)
+            var sprite = SKSpriteNode(imageNamed:"Spaceship")
+            sprite.xScale = 0.05
+            sprite.yScale = 0.05
+            sprite.position = location
+            addChild(sprite)
+            sprites.append(sprite)
+            
+        }
+    }
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        /* Called when a touch begins */
-        
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
-            
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
-            
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
-            
-            sprite.runAction(SKAction.repeatActionForever(action))
-            
-            self.addChild(sprite)
-        }
+        placeFingerPrints(touches)
     }
-   
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        removeChildrenInArray(sprites)
+    }
+    
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent!) {
+        placeFingerPrints(touches)
+    }
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
