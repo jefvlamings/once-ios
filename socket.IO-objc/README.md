@@ -33,7 +33,8 @@ If required, additional parameters can be included in the handshake by adding an
 ``` objective-c
 [socketIO connectToHost:@"localhost"
                  onPort:3000
-             withParams:@{@"auth_token":@"1234"}];
+             withParams:[NSDictionary dictionaryWithObjectsAndKeys:@"1234", @"auth_token", nil]
+];
 ```
 
 A namespace can also be defined in the connection details:
