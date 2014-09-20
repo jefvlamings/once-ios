@@ -31,9 +31,21 @@ class GameScene: SKScene, SocketIODelegate {
     }
     
     func socketIO(socket: SocketIO!, didReceiveEvent packet: SocketIOPacket) {
-        println("---")
-        println(packet.data)
-        println("---")
+        var json: AnyObject! = packet.dataAsJSON()
+        var jsonDict = JSONValue(json)
+        var name = jsonDict[0]
+        var coorX = jsonDict[1]["x"]
+        var coorY = jsonDict[1]["y"]
+        println(coorX)
+        println(coorY)
+        
+        /* TODO: 
+            cast coordiantes to float, 
+            create a CGPoint
+            draw on fingerprint
+        */
+        
+        //var location = CGPoint(x: Float, y: Float)
     }
     
     func socketIO(socket: SocketIO!, didSendMessage packet: SocketIOPacket) {
