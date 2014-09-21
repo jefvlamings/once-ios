@@ -31,21 +31,23 @@ class GameScene: SKScene, SocketIODelegate {
     }
     
     func socketIO(socket: SocketIO!, didReceiveEvent packet: SocketIOPacket) {
+        
         var json: AnyObject! = packet.dataAsJSON()
         var jsonDict = JSONValue(json)
-        var name = jsonDict[0]
-        var coorX = jsonDict[1]["x"]
-        var coorY = jsonDict[1]["y"]
-        println(coorX)
-        println(coorY)
-        
-        /* TODO: 
-            cast coordiantes to float, 
-            create a CGPoint
-            draw on fingerprint
-        */
-        
-        //var location = CGPoint(x: Float, y: Float)
+        var name:NSString? = jsonDict[0].string
+        let screenWidth = self.size.width
+        let screenHeight = self.size.height
+        let coorX = jsonDict[1]["x"].number
+        let coorY = jsonDict[1]["y"].number
+        if coorX != nil && coorY != nil && name == "mouse1" {
+            removeChildrenInArray(sprites)
+            var coorX = jsonDict[1]["x"].number as CGFloat
+            var coorY = jsonDict[1]["y"].number as CGFloat
+            var x = coorX*screenWidth
+            var y = (1-coorY) * screenHeight
+            var location = CGPointMake(x, y)
+            placeFingerPrint(location)
+        }
     }
     
     func socketIO(socket: SocketIO!, didSendMessage packet: SocketIOPacket) {
@@ -63,7 +65,7 @@ class GameScene: SKScene, SocketIODelegate {
         let x = location.x
         let y = screenHeight - location.y
         let data = ["x": x/screenWidth, "y": y/screenHeight]
-        socket.sendEvent("mouse", withData: data)
+        socket.sendEvent("mouse2", withData: data)
     }
     
     func placeFingerPrint(location: CGPoint){
@@ -82,7 +84,6 @@ class GameScene: SKScene, SocketIODelegate {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             pushLocation(location)
-            placeFingerPrint(location)
         }
     }
     
@@ -103,7 +104,7 @@ class GameScene: SKScene, SocketIODelegate {
         removeChildrenInArray(sprites)
     }
     
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent!) {
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         // Update the fingerprint location when a touch is moving
         placeFingerPrints(touches)
     }
