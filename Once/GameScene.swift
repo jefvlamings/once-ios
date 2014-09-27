@@ -12,7 +12,10 @@ class GameScene: SKScene, SocketIODelegate {
     
     
     let socket: SocketIO!
-    var sprites : [SKSpriteNode] = []
+    var particle1: SKEmitterNode!
+    var particle2: SKEmitterNode!
+    var particles1: [SKEmitterNode] = []
+    var particles2: [SKEmitterNode] = []
     
     func socketIODidConnect(socket: SocketIO!) {
         println("1")
@@ -40,13 +43,18 @@ class GameScene: SKScene, SocketIODelegate {
         let coorX = jsonDict[1]["x"].number
         let coorY = jsonDict[1]["y"].number
         if coorX != nil && coorY != nil && name == "mouse1" {
-            removeChildrenInArray(sprites)
             var coorX = jsonDict[1]["x"].number as CGFloat
             var coorY = jsonDict[1]["y"].number as CGFloat
             var x = coorX*screenWidth
             var y = (1-coorY) * screenHeight
             var location = CGPointMake(x, y)
-            placeFingerPrint(location)
+            if particles2.isEmpty {
+                addParticle(2)
+            }
+            else {
+                updateParticle(2, location: location)
+            }
+            
         }
     }
     
@@ -68,23 +76,32 @@ class GameScene: SKScene, SocketIODelegate {
         socket.sendEvent("mouse2", withData: data)
     }
     
-    func placeFingerPrint(location: CGPoint){
+    func updateParticle(owner: Int, location: CGPoint){
         // Adds a sprite node resembling a fingerprint to the scene
-        let sprite = SKSpriteNode(imageNamed:"Spaceship")
-        sprite.xScale = 0.05
-        sprite.yScale = 0.05
-        sprite.position = location
-        addChild(sprite)
-        sprites.append(sprite)
+        if(owner == 1) {
+            particle1.position = location
+        }
+        else {
+            particle2.position = location
+        }
     }
     
-    func placeFingerPrints(touches: NSSet) {
-        // Place a finger print on the scene for each touch
-        removeChildrenInArray(sprites)
-        for touch: AnyObject in touches {
-            let location = touch.locationInNode(self)
-            pushLocation(location)
+    func addParticle(owner: Int) {
+        var particle = SKEmitterNode(fileNamed: "MyParticle.sks")
+        particle.name = "sparkEmmitter"
+        particle.zPosition = 1
+        particle.targetNode = self
+        particle.particleLifetime = 1
+        
+        if(owner == 1) {
+            particle1 = particle
+            particles1.append(particle1)
         }
+        else {
+            particle2 = particle
+            particles2.append(particle2)
+        }
+        self.addChild(particle)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -92,21 +109,33 @@ class GameScene: SKScene, SocketIODelegate {
         super.init(coder: aDecoder)
         socket = SocketIO(delegate: self)
         socket.connectToHost("192.168.0.226", onPort:6969)
+        self.backgroundColor = SKColor(white: CGFloat(0), alpha: CGFloat(0))
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         // Place fingerprints when the surface is touched
-        placeFingerPrints(touches)
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self)
+            if particles1.isEmpty {
+                addParticle(1)
+            }
+            updateParticle(1, location: location)
+            pushLocation(location)
+        }
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         // Remove all fingerprints when the surface is no longer touched
-        removeChildrenInArray(sprites)
+
     }
     
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         // Update the fingerprint location when a touch is moving
-        placeFingerPrints(touches)
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self)
+            updateParticle(1, location: location)
+            pushLocation(location)
+        }
     }
     
     override func update(currentTime: CFTimeInterval) {
