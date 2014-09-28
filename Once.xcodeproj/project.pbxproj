@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61121B3319D86F5B0096A1B7 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61121B3219D86F5B0096A1B7 /* Api.swift */; };
+		61121B3519D8736F0096A1B7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61121B3419D8736F0096A1B7 /* Event.swift */; };
 		6129395A19CD863B00121E97 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 6129393719CD863B00121E97 /* .gitignore */; };
 		6129395B19CD863B00121E97 /* .gitmodules in Resources */ = {isa = PBXBuildFile; fileRef = 6129393819CD863B00121E97 /* .gitmodules */; };
 		6129395C19CD863B00121E97 /* CHANGELOG.md in Sources */ = {isa = PBXBuildFile; fileRef = 6129393919CD863B00121E97 /* CHANGELOG.md */; };
@@ -32,6 +34,7 @@
 		616CAC9E19CCB9CB009202E6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9D19CCB9CB009202E6 /* CFNetwork.framework */; };
 		616CACA019CCB9D5009202E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9F19CCB9D5009202E6 /* Security.framework */; };
 		616CACA219CCB9DE009202E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CACA119CCB9DE009202E6 /* Foundation.framework */; };
+		61CA4AE019D861460048DB29 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA4ADF19D861460048DB29 /* Hand.swift */; };
 		61D7461A19D5BA9D002BCF63 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 61D7461819D5BA9D002BCF63 /* MyParticle.sks */; };
 		61D7461B19D5BA9D002BCF63 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 61D7461919D5BA9D002BCF63 /* spark.png */; };
 		61D7462319D6C046002BCF63 /* Finger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D7462219D6C046002BCF63 /* Finger.swift */; };
@@ -48,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61121B3219D86F5B0096A1B7 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		61121B3419D8736F0096A1B7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6129393519CD7C4A00121E97 /* Once-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Once-Bridging-Header.h"; sourceTree = "<group>"; };
 		6129393719CD863B00121E97 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		6129393819CD863B00121E97 /* .gitmodules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
@@ -86,6 +91,7 @@
 		616CAC9D19CCB9CB009202E6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		616CAC9F19CCB9D5009202E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		616CACA119CCB9DE009202E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		61CA4ADF19D861460048DB29 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		61D7461819D5BA9D002BCF63 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		61D7461919D5BA9D002BCF63 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		61D7462219D6C046002BCF63 /* Finger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finger.swift; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 			isa = PBXGroup;
 			children = (
 				61D7462219D6C046002BCF63 /* Finger.swift */,
+				61CA4ADF19D861460048DB29 /* Hand.swift */,
+				61121B3219D86F5B0096A1B7 /* Api.swift */,
+				61121B3419D8736F0096A1B7 /* Event.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -378,11 +387,14 @@
 				61684A2219CCB145009846F1 /* GameViewController.swift in Sources */,
 				6129396019CD863B00121E97 /* SocketIO.m in Sources */,
 				61684A1C19CCB145009846F1 /* AppDelegate.swift in Sources */,
+				61121B3519D8736F0096A1B7 /* Event.swift in Sources */,
 				6129395C19CD863B00121E97 /* CHANGELOG.md in Sources */,
 				6129396119CD863B00121E97 /* SocketIOJSONSerialization.m in Sources */,
 				6129396319CD863B00121E97 /* SocketIOTransportWebsocket.m in Sources */,
+				61CA4AE019D861460048DB29 /* Hand.swift in Sources */,
 				6129397519CDDC9A00121E97 /* SwiftyJSON.swift in Sources */,
 				61D7462319D6C046002BCF63 /* Finger.swift in Sources */,
+				61121B3319D86F5B0096A1B7 /* Api.swift in Sources */,
 				6129396219CD863B00121E97 /* SocketIOPacket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
