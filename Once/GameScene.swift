@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, ApiDelegate {
     
     /**
         API
@@ -34,7 +34,28 @@ class GameScene: SKScene {
         self.backgroundColor = SKColor(white: CGFloat(0), alpha: CGFloat(0))
         self.myHand = Hand(id: 1, scene: self)
         self.otherHand = Hand(id: 2, scene: self)
-        self.api = Api(scene: self)
+        self.api = Api()
+        self.api.delegate = self
+    }
+    
+    /**
+        Event Received
+    */
+    func eventReceived(event: Event) {
+        let screenWidth = self.size.width
+        let screenHeight = self.size.height
+        var x = CGFloat(event.x) * screenWidth
+        var y = (1-CGFloat(event.y)) * screenHeight
+        var location = CGPointMake(x, y)
+        
+        
+        if(self.otherHand.fingers.count == 0) {
+            self.otherHand.addFinger(location)
+        }
+        
+        let finger = self.otherHand.getFingerById(0)
+        finger?.setPosition(location)
+        
     }
     
     /**
@@ -46,7 +67,7 @@ class GameScene: SKScene {
             let location = touch.locationInNode(self)
             let finger = self.myHand.addFinger(location)
             finger.setTouch(touch as UITouch)
-            self.api.pushLocation(location)
+            self.sendFingerLocation(finger)
         }
     }
     
@@ -72,8 +93,20 @@ class GameScene: SKScene {
             let location = touch.locationInNode(self)
             if let finger = self.myHand.getFingerByTouch(touch as UITouch) {
                 self.myHand.moveFinger(finger.id, location: location)
+                self.sendFingerLocation(finger)
             }
-            self.api.pushLocation(location)
+        }
+    }
+    
+    /**
+        Send Finger Location
+    */
+    func sendFingerLocation(finger: Finger) {
+        if finger.position != nil {
+            let x = finger.position.x / self.size.width
+            let y = (self.size.height - finger.position.y) / self.size.height
+            let event = Event(name: "mouse2", x: Float(x), y: Float(y))
+            self.api.sendEvent(event)
         }
     }
     

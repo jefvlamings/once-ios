@@ -35,6 +35,7 @@
 		616CACA019CCB9D5009202E6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CAC9F19CCB9D5009202E6 /* Security.framework */; };
 		616CACA219CCB9DE009202E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616CACA119CCB9DE009202E6 /* Foundation.framework */; };
 		61CA4AE019D861460048DB29 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61CA4ADF19D861460048DB29 /* Hand.swift */; };
+		61D3746D19DF0E1A00504679 /* ApiDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D3746C19DF0E1A00504679 /* ApiDelegate.swift */; };
 		61D7461A19D5BA9D002BCF63 /* MyParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 61D7461819D5BA9D002BCF63 /* MyParticle.sks */; };
 		61D7461B19D5BA9D002BCF63 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 61D7461919D5BA9D002BCF63 /* spark.png */; };
 		61D7462319D6C046002BCF63 /* Finger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D7462219D6C046002BCF63 /* Finger.swift */; };
@@ -92,6 +93,7 @@
 		616CAC9F19CCB9D5009202E6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		616CACA119CCB9DE009202E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		61CA4ADF19D861460048DB29 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		61D3746C19DF0E1A00504679 /* ApiDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiDelegate.swift; sourceTree = "<group>"; };
 		61D7461819D5BA9D002BCF63 /* MyParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyParticle.sks; sourceTree = "<group>"; };
 		61D7461919D5BA9D002BCF63 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		61D7462219D6C046002BCF63 /* Finger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Finger.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				61CA4ADF19D861460048DB29 /* Hand.swift */,
 				61121B3219D86F5B0096A1B7 /* Api.swift */,
 				61121B3419D8736F0096A1B7 /* Event.swift */,
+				61D3746C19DF0E1A00504679 /* ApiDelegate.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				6129397319CD866900121E97 /* SRWebSocket.m in Sources */,
 				6129396419CD863B00121E97 /* SocketIOTransportXHR.m in Sources */,
 				6129395F19CD863B00121E97 /* README.md in Sources */,
+				61D3746D19DF0E1A00504679 /* ApiDelegate.swift in Sources */,
 				6129395D19CD863B00121E97 /* CONTRIBUTORS.md in Sources */,
 				61684A2019CCB145009846F1 /* GameScene.swift in Sources */,
 				61684A2219CCB145009846F1 /* GameViewController.swift in Sources */,

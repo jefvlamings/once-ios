@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Jef Vlamings. All rights reserved.
 //
 
-import Spritekit
-
 class Api: NSObject, SocketIODelegate {
     
     /**
@@ -16,19 +14,9 @@ class Api: NSObject, SocketIODelegate {
     let socket: SocketIO!
     
     /**
-        Scene
+        Delegate
     */
-    let scene: SKScene!
-    
-    /**
-        Initializer
-    */
-    required init(scene: SKScene) {
-        super.init()
-        self.scene = scene
-        self.socket = SocketIO(delegate: self)
-        self.socket.connectToHost("192.168.0.226", onPort:6969)
-    }
+    var delegate: ApiDelegate!
     
     /**
         Connection started
@@ -62,19 +50,15 @@ class Api: NSObject, SocketIODelegate {
         Event received
     */
     func socketIO(socket: SocketIO!, didReceiveEvent packet: SocketIOPacket) {
-        let event = Event()
-        event.setJSON(packet.dataAsJSON())
-        
-        if event.name != nil {
-            let screenWidth = self.scene.size.width
-            let screenHeight = self.scene.size.height
-            var x = event.x! * screenWidth
-            var y = (1-event.y!) * screenHeight
-            var location = CGPointMake(x, y)
+        let json: AnyObject! = packet.dataAsJSON()
+        let jsonDict = JSONValue(json)
+        var name:NSString? = jsonDict[0].string
+        let coorX = jsonDict[1]["x"].number
+        let coorY = jsonDict[1]["y"].number
+        if coorX != nil && coorY != nil && name == "mouse1" {
+            let event = Event(name: name!, x: Float(coorX!), y: Float(coorY!))
+            self.delegate.eventReceived(event)
         }
-        
-        // Send to gamescene ?
-        
     }
     
     /**
@@ -92,16 +76,20 @@ class Api: NSObject, SocketIODelegate {
     }
     
     /**
-        Push Location
+        Send Event
     */
-    func pushLocation(location: CGPoint) {
-        // Pushes a given location to the socket server
-        let screenWidth = self.scene.size.width
-        let screenHeight = self.scene.size.height
-        let x = location.x
-        let y = screenHeight - location.y
-        let data = ["x": x/screenWidth, "y": y/screenHeight]
-        socket.sendEvent("mouse2", withData: data)
+    func sendEvent(event: Event) {
+        socket.sendEvent(event.name, withData: event.getData())
+    }
+    
+    /**
+    Initializer
+    */
+    required override init() {
+        super.init()
+        self.socket = SocketIO()
+        self.socket.delegate = self
+        self.socket.connectToHost("192.168.0.226", onPort:6969)
     }
     
 }

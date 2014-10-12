@@ -31,6 +31,11 @@ class Finger {
     var touch: UITouch!
     
     /**
+        Position
+    */
+    var position: CGPoint!
+    
+    /**
         Initializer
     */
     init(id: Int, scene: SKScene) {
@@ -62,6 +67,7 @@ class Finger {
         Update the postion of the particle
     */
     func setPosition(location: CGPoint) {
+        self.position = location
         self.particle.position = location
     }
     
